@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+
+    <link href="webjars/bootstrap/4.3.0/css/bootstrap.min.css"
+          rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World</h1>
+<h1 class="text-danger">Hello World</h1>
+<div sec:authorize="hasRole('USER')">Text visible to user.</div>
+<div sec:authorize="hasRole('ADMIN')">Text visible to admin.</div>
+<div sec:authorize="isAuthenticated()">
+    Text visible only to authenticated users.
+</div>
+
 </body>
 </html>

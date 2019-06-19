@@ -6,5 +6,9 @@
 </head>
 <body>
 <h1>USER</h1>
+Authenticated username:
+<div sec:authentication="name"></div>
+Authenticated user roles:
+<div sec:authentication="principal.authorities"></div>
 </body>
 </html>
