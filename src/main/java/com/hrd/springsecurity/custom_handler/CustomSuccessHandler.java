@@ -27,6 +27,7 @@ public class CustomSuccessHandler  implements AuthenticationSuccessHandler {
 //        httpServletResponse.sendRedirect(redirect);
 
         String url = httpServletRequest.getSession().getAttribute("REDIRECT_URL").toString();
+        System.out.println("URL : " + url);
         httpServletResponse.sendRedirect(url);
 
     }
