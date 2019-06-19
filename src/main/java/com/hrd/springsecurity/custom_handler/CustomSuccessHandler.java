@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Null;
 import java.io.IOException;
 
 @Component
@@ -25,9 +26,11 @@ public class CustomSuccessHandler  implements AuthenticationSuccessHandler {
 //            }
 //        }
 //        httpServletResponse.sendRedirect(redirect);
-
-        String url = httpServletRequest.getSession().getAttribute("REDIRECT_URL").toString();
-        httpServletResponse.sendRedirect(url);
-
+        try {
+            String url = httpServletRequest.getSession().getAttribute("REDIRECT_URL").toString();
+            httpServletResponse.sendRedirect(url);
+        }catch (NullPointerException e){
+            httpServletResponse.sendRedirect("/");
+        }
     }
 }

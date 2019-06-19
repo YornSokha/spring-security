@@ -45,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/user/**").hasRole("USER");
         //custom logout
         http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
-        //custom entry point(url that user to go after logged in)
+        //custom entry point(url that user to go af​ter logged in)
         http.exceptionHandling().accessDeniedHandler(accessDeniedHandler).authenticationEntryPoint(authenticationEntryPoint);
     }
 }
