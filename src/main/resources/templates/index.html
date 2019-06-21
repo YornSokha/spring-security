@@ -8,6 +8,7 @@
     <title>Title</title>
 </head>
 <body>
+<a th:href="@{/{id}/aritlce/{name}(id = 3, name = 'sokha', search='sokh', order=1)}">Click me</a>
 <h1 class="text-danger">Hello World</h1>
 <div sec:authorize="hasRole('USER')">Text visible to user.</div>
 <div sec:authorize="hasRole('ADMIN')">Text visible to admin.</div>
